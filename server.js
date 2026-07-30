@@ -3,6 +3,8 @@ const path = require('path');
 const fs = require('fs');
 const { DatabaseSync } = require('node:sqlite');
 
+try { process.loadEnvFile(); } catch {}
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
