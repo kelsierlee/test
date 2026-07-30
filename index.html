@@ -190,25 +190,22 @@
       linear-gradient(160deg, #2A2116 0%, #17110B 60%, #0D0A08 100%);
   }
 
-  .portrait-inner::before {
+  .portrait-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: sepia(0.3) contrast(1.1) brightness(0.82) saturate(0.85);
+  }
+
+  .portrait-inner::after {
     content: "";
     position: absolute;
     inset: 0;
-    background-image:
-      repeating-linear-gradient(115deg, rgba(236,225,204,0.035) 0px, rgba(236,225,204,0.035) 2px, transparent 2px, transparent 6px);
-    mix-blend-mode: overlay;
-  }
-
-  .portrait-inner span {
-    position: absolute;
-    bottom: 8%;
-    left: 8%;
-    font-family: "Playfair Display", serif;
-    font-style: italic;
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
-    color: var(--ivory-dim);
-    opacity: 0.75;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(198,162,76,0.3), transparent 55%),
+      radial-gradient(ellipse at 70% 85%, rgba(124,46,42,0.4), transparent 60%);
+    mix-blend-mode: multiply;
   }
 
   .portrait-caption {
@@ -361,6 +358,60 @@
   .swatches { display: flex; gap: 0; margin-top: 2.5rem; height: 46px; border: 1px solid var(--line); }
   .swatches div { flex: 1; }
 
+  /* ---------- Portfolio ---------- */
+  .gallery-group { margin-bottom: 3.5rem; }
+  .gallery-group:last-child { margin-bottom: 0; }
+
+  .gallery-label {
+    font-family: "EB Garamond", serif;
+    font-style: italic;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    aspect-ratio: 3/4;
+    background: var(--panel);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: sepia(0.15) contrast(1.05) brightness(0.9);
+    transition: transform 0.6s ease, filter 0.6s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.06);
+    filter: sepia(0) contrast(1.05) brightness(1);
+  }
+
+  .gallery-item figcaption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 0.9rem 1rem;
+    background: linear-gradient(to top, rgba(13,10,8,0.92), transparent);
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    color: var(--ivory-dim);
+    font-style: italic;
+  }
+
   /* ---------- Quote ---------- */
   .quote-section {
     text-align: center;
@@ -406,6 +457,7 @@
     .callings { grid-template-columns: 1fr; }
     .medium-grid { grid-template-columns: repeat(2, 1fr); }
     .medium-grid div:nth-child(2) { border-right: none; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   }
 </style>
 </head>
@@ -423,6 +475,7 @@
       <li><a href="#about">Biography</a></li>
       <li><a href="#callings">Two Callings</a></li>
       <li><a href="#practice">Artistic Practice</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
     </ul>
   </nav>
 
@@ -440,9 +493,9 @@
     </div>
     <div>
       <div class="portrait">
-        <div class="portrait-inner"><span>Self, in progress — oil on canvas</span></div>
+        <div class="portrait-inner"><img src="images/portrait.jpg" alt="Jia-Hao Lee among the sculptures"></div>
       </div>
-      <p class="portrait-caption">Study in warm shadow</p>
+      <p class="portrait-caption">Among the old masters, studying form</p>
     </div>
   </section>
 
@@ -536,6 +589,76 @@
       <div style="background:#B98A63;"></div>
       <div style="background:#7C2E2A;"></div>
       <div style="background:#ECE1CC;"></div>
+    </div>
+  </section>
+
+  <div class="divider">
+    <span class="dline"></span>
+    <svg class="motif" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 30 C35 5, 5 10, 8 28 C10 40, 30 38, 50 30 C70 38, 90 40, 92 28 C95 10, 65 5, 50 30 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+      <line x1="50" y1="16" x2="50" y2="44" stroke="currentColor" stroke-width="2.5"/>
+    </svg>
+    <span class="dline"></span>
+  </div>
+
+  <section id="portfolio">
+    <div class="section-head">
+      <span class="eyebrow">Portfolio</span>
+      <h2>Sketches, Oils &amp; Dental Work</h2>
+    </div>
+
+    <div class="gallery-group">
+      <p class="gallery-label">Sketches</p>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="images/sketches/david.jpg" alt="Charcoal study after Michelangelo's David">
+          <figcaption>After Michelangelo's David — charcoal</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/sketches/anatomy.jpg" alt="Graphite study of facial musculature">
+          <figcaption>Facial Musculature — graphite study</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/sketches/skull.jpg" alt="Graphite drawing of a skull">
+          <figcaption>Skull — graphite</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="gallery-group">
+      <p class="gallery-label">Oil Paintings</p>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="images/paintings/peaches.jpg" alt="Oil painting still life with peaches">
+          <figcaption>Peaches — oil on canvas</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/paintings/jug-pears.jpg" alt="Oil painting still life with a jug and pears">
+          <figcaption>Jug &amp; Pears — oil on canvas</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/paintings/jug-grapes.jpg" alt="Oil painting still life with a jug and grapes">
+          <figcaption>Jug &amp; Grapes — oil on canvas</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="gallery-group">
+      <p class="gallery-label">Dental Work</p>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="images/dental/wax-row.jpg" alt="A row of hand-carved wax tooth models">
+          <figcaption>Wax Tooth Carving — series</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/dental/wax-closeup.jpg" alt="Close-up of a hand-carved wax tooth model">
+          <figcaption>Wax Tooth Carving — detail</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/dental/crown-model.jpg" alt="Porcelain dental crown on a plaster cast">
+          <figcaption>Porcelain Crown — cast model</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
