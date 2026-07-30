@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>李家豪 | 自我介紹</title>
+<style>
+  :root {
+    --cream: #FBF3E7;
+    --cream-deep: #F3E4D0;
+    --terracotta: #D9764A;
+    --terracotta-deep: #C1512F;
+    --gold: #E8AB55;
+    --brown: #4A2E22;
+    --brown-soft: #7A5340;
+    --white: #FFFDF9;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: "Noto Sans TC", "Microsoft JhengHei", "Helvetica Neue", sans-serif;
+    background: var(--cream);
+    color: var(--brown);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ---------- Nav ---------- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 6%;
+    background: rgba(251, 243, 231, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    border-bottom: 1px solid rgba(74,46,34,0.08);
+  }
+
+  nav .logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--terracotta-deep);
+    letter-spacing: 0.05em;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.2rem;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--brown-soft);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.25s ease;
+  }
+
+  nav a:hover { color: var(--terracotta-deep); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6%;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(232,171,85,0.35), transparent 45%),
+      radial-gradient(circle at 85% 75%, rgba(217,118,74,0.30), transparent 50%),
+      var(--cream);
+    overflow: hidden;
+  }
+
+  .hero::before,
+  .hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    opacity: 0.5;
+  }
+
+  .hero::before {
+    width: 260px; height: 260px;
+    background: radial-gradient(circle, var(--gold), transparent 70%);
+    top: 8%;
+    right: 10%;
+    animation: float 9s ease-in-out infinite;
+  }
+
+  .hero::after {
+    width: 180px; height: 180px;
+    background: radial-gradient(circle, var(--terracotta), transparent 70%);
+    bottom: 10%;
+    left: 8%;
+    animation: float 7s ease-in-out infinite reverse;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-25px) translateX(15px); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 720px;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    border: 1px solid var(--terracotta);
+    color: var(--terracotta-deep);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    font-weight: 800;
+    color: var(--brown);
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+  }
+
+  .hero h1 span {
+    color: var(--terracotta-deep);
+  }
+
+  .hero p.role {
+    font-size: 1.3rem;
+    color: var(--brown-soft);
+    margin-bottom: 1.8rem;
+    font-weight: 500;
+  }
+
+  .hero p.desc {
+    font-size: 1.05rem;
+    color: var(--brown-soft);
+    max-width: 560px;
+    margin: 0 auto 2.5rem;
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .btn {
+    padding: 0.85rem 2rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    display: inline-block;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, var(--terracotta), var(--gold));
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(217,118,74,0.35);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--brown);
+    border: 1.5px solid var(--brown-soft);
+  }
+
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(217,118,74,0.4);
+  }
+
+  /* ---------- Section shared ---------- */
+  section {
+    padding: 6.5rem 6%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-head {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-head .eyebrow {
+    color: var(--terracotta-deep);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
+
+  .section-head h2 {
+    font-size: 2.3rem;
+    font-weight: 800;
+    margin-top: 0.6rem;
+    color: var(--brown);
+  }
+
+  /* ---------- About ---------- */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .about-visual {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 32px;
+    background: linear-gradient(150deg, var(--terracotta) 0%, var(--gold) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 45px rgba(193,81,47,0.28);
+  }
+
+  .about-visual span {
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgba(255,255,255,0.92);
+    letter-spacing: -0.02em;
+  }
+
+  .about-text p {
+    color: var(--brown-soft);
+    margin-bottom: 1.1rem;
+    font-size: 1.05rem;
+  }
+
+  .about-text strong {
+    color: var(--terracotta-deep);
+  }
+
+  .fact-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .fact {
+    background: var(--white);
+    border: 1px solid rgba(74,46,34,0.08);
+    border-radius: 16px;
+    padding: 1rem 1.4rem;
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+  }
+
+  .fact .num {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--terracotta-deep);
+  }
+
+  .fact .label {
+    font-size: 0.85rem;
+    color: var(--brown-soft);
+    margin-top: 0.2rem;
+  }
+
+  /* ---------- Interests ---------- */
+  .interests {
+    background: var(--cream-deep);
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 2.4rem 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(74,46,34,0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(217,118,74,0.18);
+  }
+
+  .card .icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 1.4rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background: linear-gradient(135deg, var(--terracotta), var(--gold));
+    color: var(--white);
+  }
+
+  .card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.6rem;
+    color: var(--brown);
+  }
+
+  .card p {
+    color: var(--brown-soft);
+    font-size: 0.95rem;
+  }
+
+  /* ---------- Palette strip (decorative, painting theme) ---------- */
+  .palette-strip {
+    display: flex;
+    justify-content: center;
+    gap: 0.9rem;
+    margin: 3.5rem 0 0;
+  }
+
+  .palette-strip .dot {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    box-shadow: 0 6px 14px rgba(74,46,34,0.15);
+  }
+
+  /* ---------- Quote ---------- */
+  .quote {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 5rem 6%;
+  }
+
+  .quote p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--brown);
+    line-height: 1.6;
+    position: relative;
+  }
+
+  .quote p::before,
+  .quote p::after {
+    content: '"';
+    color: var(--terracotta);
+    font-size: 2rem;
+    font-weight: 800;
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    text-align: center;
+    padding: 2.5rem 6%;
+    color: var(--brown-soft);
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(74,46,34,0.08);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 760px) {
+    nav ul { display: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-visual { max-width: 260px; margin: 0 auto; }
+    .cards { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">李家豪</div>
+    <ul>
+      <li><a href="#about">關於我</a></li>
+      <li><a href="#interests">興趣</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-tag">SELF INTRODUCTION</span>
+      <h1>你好，我是<span>李家豪</span></h1>
+      <p class="role">牙醫系學生 · 業餘畫家</p>
+      <p class="desc">白天鑽研牙科知識與臨床技術，閒暇時則拿起畫筆，用油畫與素描記錄生活中的光影與色彩。</p>
+      <div class="btn-group">
+        <a href="#about" class="btn btn-primary">認識我</a>
+        <a href="#interests" class="btn btn-outline">我的興趣</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-head">
+      <span class="eyebrow">About Me</span>
+      <h2>關於我</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-visual"><span>李</span></div>
+      <div class="about-text">
+        <p>我是<strong>李家豪</strong>，目前是一名<strong>牙醫系學生</strong>，正在學習如何用專業與細心，為患者帶來健康與自信的笑容。</p>
+        <p>在課業之外，我熱愛<strong>油畫</strong>與<strong>素描</strong>，喜歡透過畫筆捕捉光線、質感與情緒，這也讓我在精細的臨床操作上多了一份對細節的敏銳與耐心。</p>
+        <p>對我而言，牙醫與繪畫看似不同，卻同樣需要穩定的手、專注的心，以及對美感的堅持。</p>
+        <div class="fact-row">
+          <div class="fact"><div class="num">牙醫系</div><div class="label">主修領域</div></div>
+          <div class="fact"><div class="num">油畫</div><div class="label">熱愛創作</div></div>
+          <div class="fact"><div class="num">素描</div><div class="label">日常練習</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="interests" class="interests">
+    <div class="section-head">
+      <span class="eyebrow">Interests</span>
+      <h2>我的興趣</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">🎨</div>
+        <h3>油畫</h3>
+        <p>喜歡用厚重的顏料層層堆疊，享受色彩交融的過程，捕捉光影與情感的溫度。</p>
+      </div>
+      <div class="card">
+        <div class="icon">✏️</div>
+        <h3>素描</h3>
+        <p>用鉛筆勾勒線條與明暗，練習觀察力與耐心，是最貼近生活的創作方式。</p>
+      </div>
+    </div>
+    <div class="palette-strip">
+      <div class="dot" style="background:#D9764A;"></div>
+      <div class="dot" style="background:#E8AB55;"></div>
+      <div class="dot" style="background:#C1512F;"></div>
+      <div class="dot" style="background:#7A5340;"></div>
+      <div class="dot" style="background:#F3E4D0;"></div>
+    </div>
+  </section>
+
+  <div class="quote">
+    <p>用嚴謹守護笑容，用畫筆記錄生活。</p>
+  </div>
+
+  <footer>
+    &copy; 2026 李家豪 — 牙醫系學生 · 油畫與素描愛好者
+  </footer>
+
+</body>
+</html>
