@@ -9,16 +9,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #15100D;
-    --bg-deep: #0D0A08;
-    --panel: #1E1712;
-    --panel-soft: #241C16;
-    --ivory: #ECE1CC;
-    --ivory-dim: #B9AC93;
-    --gold: #C6A24C;
-    --gold-soft: #8E7530;
+    --bg: #FAFAF4;
+    --bg-deep: #F1EDE2;
+    --panel: #FFFFFF;
+    --panel-soft: #F6F3E9;
+    --ivory: #1A1A1A;
+    --ivory-dim: #58554C;
+    --gold: #9C7A2E;
+    --gold-soft: #7E6326;
     --crimson: #7C2E2A;
-    --line: rgba(236,225,204,0.14);
+    --line: rgba(26,26,26,0.12);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -61,7 +61,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.6rem 6%;
-    background: linear-gradient(to bottom, rgba(13,10,8,0.92), transparent 150%);
+    background: linear-gradient(to bottom, rgba(250,250,244,0.92), transparent 150%);
     z-index: 100;
   }
 
@@ -167,10 +167,10 @@
 
   .btn-solid {
     background: var(--gold);
-    color: var(--bg-deep);
+    color: #FFFFFF;
     font-weight: 600;
   }
-  .btn-solid:hover { background: var(--ivory); }
+  .btn-solid:hover { background: var(--ivory); color: var(--bg); }
 
   .btn-ghost {
     border: 1px solid var(--line);
@@ -184,6 +184,8 @@
     aspect-ratio: 3/4;
     border: 1px solid var(--line);
     padding: 14px;
+    background: var(--panel);
+    box-shadow: 0 20px 45px rgba(26,26,26,0.08);
   }
 
   .portrait-inner {
@@ -191,10 +193,7 @@
     height: 100%;
     position: relative;
     overflow: hidden;
-    background:
-      radial-gradient(ellipse at 30% 20%, rgba(198,162,76,0.25), transparent 55%),
-      radial-gradient(ellipse at 70% 85%, rgba(124,46,42,0.35), transparent 60%),
-      linear-gradient(160deg, #2A2116 0%, #17110B 60%, #0D0A08 100%);
+    background: var(--panel-soft);
   }
 
   .portrait-inner img {
@@ -202,17 +201,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: sepia(0.3) contrast(1.1) brightness(0.82) saturate(0.85);
-  }
-
-  .portrait-inner::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse at 30% 20%, rgba(198,162,76,0.3), transparent 55%),
-      radial-gradient(ellipse at 70% 85%, rgba(124,46,42,0.4), transparent 60%);
-    mix-blend-mode: multiply;
+    filter: contrast(1.03) saturate(1.02);
   }
 
   .portrait-caption {
@@ -222,7 +211,7 @@
     text-transform: uppercase;
     color: var(--ivory-dim);
     margin-top: 1rem;
-    opacity: 0.7;
+    opacity: 0.85;
   }
 
   /* ---------- Divider (butterfly motif) ---------- */
@@ -297,6 +286,7 @@
     border: 1px solid var(--line);
     padding: 2.6rem 2.2rem;
     position: relative;
+    box-shadow: 0 4px 24px rgba(26,26,26,0.05);
   }
 
   .calling-card::before {
@@ -383,6 +373,7 @@
     border: 1px solid var(--line);
     aspect-ratio: 3/4;
     background: var(--panel);
+    box-shadow: 0 4px 24px rgba(26,26,26,0.05);
   }
 
   .gallery-item img {
@@ -390,24 +381,23 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: sepia(0.15) contrast(1.05) brightness(0.9);
-    transition: transform 0.6s ease, filter 0.6s ease;
+    filter: contrast(1.03) saturate(1.02);
+    transition: transform 0.6s ease;
   }
 
   .gallery-item:hover img {
     transform: scale(1.06);
-    filter: sepia(0) contrast(1.05) brightness(1);
   }
 
   .gallery-item figcaption {
     position: absolute;
     left: 0; right: 0; bottom: 0;
     padding: 0.9rem 1rem;
-    background: linear-gradient(to top, rgba(13,10,8,0.92), transparent);
+    background: linear-gradient(to top, rgba(250,250,244,0.95), transparent);
     font-size: 0.78rem;
     letter-spacing: 0.02em;
-    color: var(--ivory-dim);
-    font-style: italic;
+    color: var(--ivory);
+    font-weight: 500;
   }
 
   /* ---------- Quote ---------- */
@@ -443,7 +433,7 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--ivory-dim);
-    opacity: 0.6;
+    opacity: 0.85;
   }
 
   /* ---------- Responsive ---------- */
