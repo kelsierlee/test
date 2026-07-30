@@ -1,32 +1,54 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>李家豪 | 自我介紹</title>
+<title>Chia-Hao Lee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --cream: #FBF3E7;
-    --cream-deep: #F3E4D0;
-    --terracotta: #D9764A;
-    --terracotta-deep: #C1512F;
-    --gold: #E8AB55;
-    --brown: #4A2E22;
-    --brown-soft: #7A5340;
-    --white: #FFFDF9;
+    --bg: #15100D;
+    --bg-deep: #0D0A08;
+    --panel: #1E1712;
+    --panel-soft: #241C16;
+    --ivory: #ECE1CC;
+    --ivory-dim: #B9AC93;
+    --gold: #C6A24C;
+    --gold-soft: #8E7530;
+    --crimson: #7C2E2A;
+    --line: rgba(236,225,204,0.14);
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: "Noto Sans TC", "Microsoft JhengHei", "Helvetica Neue", sans-serif;
-    background: var(--cream);
-    color: var(--brown);
-    line-height: 1.7;
-    overflow-x: hidden;
+    font-family: "EB Garamond", Georgia, serif;
+    background: var(--bg);
+    color: var(--ivory-dim);
+    line-height: 1.8;
+    font-size: 1.08rem;
   }
+
+  h1, h2, h3, .display {
+    font-family: "Playfair Display", Georgia, serif;
+    color: var(--ivory);
+    letter-spacing: 0.01em;
+  }
+
+  .eyebrow {
+    display: block;
+    font-family: "EB Garamond", serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  a { color: inherit; }
 
   /* ---------- Nav ---------- */
   nav {
@@ -35,431 +57,416 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 6%;
-    background: rgba(251, 243, 231, 0.85);
-    backdrop-filter: blur(8px);
+    padding: 1.6rem 6%;
+    background: linear-gradient(to bottom, rgba(13,10,8,0.92), transparent 150%);
     z-index: 100;
-    border-bottom: 1px solid rgba(74,46,34,0.08);
   }
 
   nav .logo {
+    font-family: "Playfair Display", serif;
     font-weight: 700;
-    font-size: 1.2rem;
-    color: var(--terracotta-deep);
-    letter-spacing: 0.05em;
+    font-size: 1.15rem;
+    color: var(--ivory);
+    letter-spacing: 0.06em;
   }
 
   nav ul {
     display: flex;
     list-style: none;
-    gap: 2.2rem;
+    gap: 2.6rem;
   }
 
   nav a {
     text-decoration: none;
-    color: var(--brown-soft);
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: color 0.25s ease;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ivory-dim);
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s ease, border-color 0.3s ease;
   }
 
-  nav a:hover { color: var(--terracotta-deep); }
+  nav a:hover { color: var(--gold); border-color: var(--gold); }
 
   /* ---------- Hero ---------- */
   .hero {
-    position: relative;
     min-height: 100vh;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
-    justify-content: center;
-    padding: 0 6%;
-    background:
-      radial-gradient(circle at 15% 20%, rgba(232,171,85,0.35), transparent 45%),
-      radial-gradient(circle at 85% 75%, rgba(217,118,74,0.30), transparent 50%),
-      var(--cream);
-    overflow: hidden;
+    padding: 8rem 6% 5rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 4rem;
   }
 
-  .hero::before,
-  .hero::after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(2px);
-    opacity: 0.5;
-  }
-
-  .hero::before {
-    width: 260px; height: 260px;
-    background: radial-gradient(circle, var(--gold), transparent 70%);
-    top: 8%;
-    right: 10%;
-    animation: float 9s ease-in-out infinite;
-  }
-
-  .hero::after {
-    width: 180px; height: 180px;
-    background: radial-gradient(circle, var(--terracotta), transparent 70%);
-    bottom: 10%;
-    left: 8%;
-    animation: float 7s ease-in-out infinite reverse;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0) translateX(0); }
-    50% { transform: translateY(-25px) translateX(15px); }
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    max-width: 720px;
-  }
-
-  .hero-tag {
-    display: inline-block;
-    padding: 0.4rem 1.2rem;
-    border: 1px solid var(--terracotta);
-    color: var(--terracotta-deep);
-    border-radius: 999px;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    margin-bottom: 1.8rem;
-  }
+  .hero-text .eyebrow { margin-bottom: 1.4rem; }
 
   .hero h1 {
-    font-size: clamp(2.6rem, 6vw, 4.5rem);
-    font-weight: 800;
-    color: var(--brown);
-    margin-bottom: 1rem;
-    letter-spacing: 0.02em;
+    font-size: clamp(2.8rem, 5.5vw, 4.6rem);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 1.4rem;
   }
 
-  .hero h1 span {
-    color: var(--terracotta-deep);
-  }
-
-  .hero p.role {
-    font-size: 1.3rem;
-    color: var(--brown-soft);
-    margin-bottom: 1.8rem;
+  .hero .role {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 1.35rem;
+    color: var(--gold);
+    margin-bottom: 1.6rem;
     font-weight: 500;
   }
 
-  .hero p.desc {
-    font-size: 1.05rem;
-    color: var(--brown-soft);
-    max-width: 560px;
-    margin: 0 auto 2.5rem;
+  .hero .desc {
+    max-width: 480px;
+    color: var(--ivory-dim);
+    margin-bottom: 2.2rem;
   }
 
-  .btn-group {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-  }
+  .btn-row { display: flex; gap: 1.2rem; flex-wrap: wrap; }
 
   .btn {
-    padding: 0.85rem 2rem;
-    border-radius: 999px;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
     display: inline-block;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.95rem 2.1rem;
+    transition: all 0.3s ease;
   }
 
-  .btn-primary {
-    background: linear-gradient(135deg, var(--terracotta), var(--gold));
-    color: var(--white);
-    box-shadow: 0 8px 20px rgba(217,118,74,0.35);
+  .btn-solid {
+    background: var(--gold);
+    color: var(--bg-deep);
+    font-weight: 600;
+  }
+  .btn-solid:hover { background: var(--ivory); }
+
+  .btn-ghost {
+    border: 1px solid var(--line);
+    color: var(--ivory-dim);
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* Portrait canvas */
+  .portrait {
+    position: relative;
+    aspect-ratio: 3/4;
+    border: 1px solid var(--line);
+    padding: 14px;
   }
 
-  .btn-outline {
-    background: transparent;
-    color: var(--brown);
-    border: 1.5px solid var(--brown-soft);
+  .portrait-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(198,162,76,0.25), transparent 55%),
+      radial-gradient(ellipse at 70% 85%, rgba(124,46,42,0.35), transparent 60%),
+      linear-gradient(160deg, #2A2116 0%, #17110B 60%, #0D0A08 100%);
   }
 
-  .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 26px rgba(217,118,74,0.4);
+  .portrait-inner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(115deg, rgba(236,225,204,0.035) 0px, rgba(236,225,204,0.035) 2px, transparent 2px, transparent 6px);
+    mix-blend-mode: overlay;
+  }
+
+  .portrait-inner span {
+    position: absolute;
+    bottom: 8%;
+    left: 8%;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: var(--ivory-dim);
+    opacity: 0.75;
+  }
+
+  .portrait-caption {
+    text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ivory-dim);
+    margin-top: 1rem;
+    opacity: 0.7;
   }
 
   /* ---------- Section shared ---------- */
   section {
-    padding: 6.5rem 6%;
+    padding: 7rem 6%;
     max-width: 1100px;
     margin: 0 auto;
+    border-top: 1px solid var(--line);
   }
 
-  .section-head {
-    text-align: center;
-    margin-bottom: 3.5rem;
+  .section-head { margin-bottom: 3rem; max-width: 640px; }
+  .section-head h2 { font-size: 2.1rem; font-weight: 700; }
+
+  /* ---------- About (editorial two column) ---------- */
+  .about-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3.5rem;
   }
 
-  .section-head .eyebrow {
-    color: var(--terracotta-deep);
+  .about-body p { margin-bottom: 1.2rem; color: var(--ivory-dim); }
+
+  .about-body .lede::first-letter {
+    font-family: "Playfair Display", serif;
+    font-size: 3.4rem;
+    float: left;
+    line-height: 0.8;
+    padding: 0.05em 0.12em 0 0;
+    color: var(--gold);
     font-weight: 700;
-    letter-spacing: 0.15em;
-    font-size: 0.85rem;
-    text-transform: uppercase;
   }
 
-  .section-head h2 {
-    font-size: 2.3rem;
-    font-weight: 800;
-    margin-top: 0.6rem;
-    color: var(--brown);
+  .fact-list {
+    list-style: none;
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--line);
   }
 
-  /* ---------- About ---------- */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    gap: 3rem;
-    align-items: center;
-  }
-
-  .about-visual {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 1;
-    border-radius: 32px;
-    background: linear-gradient(150deg, var(--terracotta) 0%, var(--gold) 100%);
+  .fact-list li {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 20px 45px rgba(193,81,47,0.28);
-  }
-
-  .about-visual span {
-    font-size: 5rem;
-    font-weight: 800;
-    color: rgba(255,255,255,0.92);
-    letter-spacing: -0.02em;
-  }
-
-  .about-text p {
-    color: var(--brown-soft);
-    margin-bottom: 1.1rem;
-    font-size: 1.05rem;
-  }
-
-  .about-text strong {
-    color: var(--terracotta-deep);
-  }
-
-  .fact-row {
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-  }
-
-  .fact {
-    background: var(--white);
-    border: 1px solid rgba(74,46,34,0.08);
-    border-radius: 16px;
-    padding: 1rem 1.4rem;
-    flex: 1;
-    min-width: 140px;
-    text-align: center;
-  }
-
-  .fact .num {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--terracotta-deep);
-  }
-
-  .fact .label {
-    font-size: 0.85rem;
-    color: var(--brown-soft);
-    margin-top: 0.2rem;
-  }
-
-  /* ---------- Interests ---------- */
-  .interests {
-    background: var(--cream-deep);
-  }
-
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-
-  .card {
-    background: var(--white);
-    border-radius: 24px;
-    padding: 2.4rem 2rem;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(74,46,34,0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(217,118,74,0.18);
-  }
-
-  .card .icon {
-    width: 72px;
-    height: 72px;
-    margin: 0 auto 1.4rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    background: linear-gradient(135deg, var(--terracotta), var(--gold));
-    color: var(--white);
-  }
-
-  .card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.6rem;
-    color: var(--brown);
-  }
-
-  .card p {
-    color: var(--brown-soft);
+    justify-content: space-between;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--line);
     font-size: 0.95rem;
   }
 
-  /* ---------- Palette strip (decorative, painting theme) ---------- */
-  .palette-strip {
-    display: flex;
-    justify-content: center;
-    gap: 0.9rem;
-    margin: 3.5rem 0 0;
+  .fact-list .k { color: var(--ivory-dim); letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.75rem; }
+  .fact-list .v { font-family: "Playfair Display", serif; color: var(--ivory); font-style: italic; }
+
+  /* ---------- Two Callings ---------- */
+  .callings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
   }
 
-  .palette-strip .dot {
-    width: 34px; height: 34px;
-    border-radius: 50%;
-    box-shadow: 0 6px 14px rgba(74,46,34,0.15);
-  }
-
-  /* ---------- Quote ---------- */
-  .quote {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 5rem 6%;
-  }
-
-  .quote p {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--brown);
-    line-height: 1.6;
+  .calling-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 2.6rem 2.2rem;
     position: relative;
   }
 
-  .quote p::before,
-  .quote p::after {
-    content: '"';
-    color: var(--terracotta);
-    font-size: 2rem;
-    font-weight: 800;
+  .calling-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+  }
+
+  .calling-card .num {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    color: var(--gold-soft);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .calling-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .calling-card p { color: var(--ivory-dim); font-size: 1rem; }
+
+  /* ---------- Practice / mediums ---------- */
+  .practice { background: var(--bg-deep); }
+
+  .medium-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--line);
+  }
+
+  .medium-grid div {
+    padding: 2rem 1rem;
+    text-align: center;
+    border-right: 1px solid var(--line);
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    color: var(--ivory-dim);
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+  }
+
+  .medium-grid div:last-child { border-right: none; }
+
+  .practice-note {
+    margin-top: 2.5rem;
+    max-width: 680px;
+    color: var(--ivory-dim);
+  }
+
+  .practice-note strong { color: var(--gold); font-weight: 500; }
+
+  .swatches { display: flex; gap: 0; margin-top: 2.5rem; height: 46px; border: 1px solid var(--line); }
+  .swatches div { flex: 1; }
+
+  /* ---------- Quote ---------- */
+  .quote-section {
+    text-align: center;
+    max-width: 760px;
+  }
+
+  .quote-section p.q {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 1.7rem;
+    color: var(--ivory);
+    line-height: 1.55;
+  }
+
+  .quote-section .q::before { content: "\201C"; color: var(--gold); }
+  .quote-section .q::after { content: "\201D"; color: var(--gold); }
+
+  .quote-section .attrib {
+    margin-top: 1.4rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
   }
 
   /* ---------- Footer ---------- */
   footer {
     text-align: center;
-    padding: 2.5rem 6%;
-    color: var(--brown-soft);
-    font-size: 0.85rem;
-    border-top: 1px solid rgba(74,46,34,0.08);
+    padding: 3rem 6%;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ivory-dim);
+    opacity: 0.6;
+    border-top: 1px solid var(--line);
   }
 
   /* ---------- Responsive ---------- */
-  @media (max-width: 760px) {
+  @media (max-width: 860px) {
     nav ul { display: none; }
-    .about-grid { grid-template-columns: 1fr; }
-    .about-visual { max-width: 260px; margin: 0 auto; }
-    .cards { grid-template-columns: 1fr; }
+    .hero { grid-template-columns: 1fr; padding-top: 7rem; }
+    .portrait { max-width: 340px; margin: 0 auto; }
+    .about-body { grid-template-columns: 1fr; }
+    .callings { grid-template-columns: 1fr; }
+    .medium-grid { grid-template-columns: repeat(2, 1fr); }
+    .medium-grid div:nth-child(2) { border-right: none; }
   }
 </style>
 </head>
 <body>
 
   <nav>
-    <div class="logo">李家豪</div>
+    <div class="logo">C. H. Lee</div>
     <ul>
-      <li><a href="#about">關於我</a></li>
-      <li><a href="#interests">興趣</a></li>
+      <li><a href="#about">Biography</a></li>
+      <li><a href="#callings">Two Callings</a></li>
+      <li><a href="#practice">Artistic Practice</a></li>
     </ul>
   </nav>
 
-  <section class="hero">
-    <div class="hero-content">
-      <span class="hero-tag">SELF INTRODUCTION</span>
-      <h1>你好，我是<span>李家豪</span></h1>
-      <p class="role">牙醫系學生 · 業餘畫家</p>
-      <p class="desc">白天鑽研牙科知識與臨床技術，閒暇時則拿起畫筆，用油畫與素描記錄生活中的光影與色彩。</p>
-      <div class="btn-group">
-        <a href="#about" class="btn btn-primary">認識我</a>
-        <a href="#interests" class="btn btn-outline">我的興趣</a>
+  <section class="hero" style="border-top:none;">
+    <div class="hero-text">
+      <span class="eyebrow">Portrait &amp; Introduction</span>
+      <h1>Chia-Hao<br>Lee</h1>
+      <p class="role">Dental Student &amp; Oil Painter</p>
+      <p class="desc">By day, a student of dental science, training the steady hand and disciplined eye that clinical work demands. By evening, a painter — drawn to the luminous brushwork and dignified realism of John Singer Sargent, working in oil and charcoal to study light, form, and character.</p>
+      <div class="btn-row">
+        <a href="#about" class="btn btn-solid">Biography</a>
+        <a href="#practice" class="btn btn-ghost">The Work</a>
       </div>
+    </div>
+    <div>
+      <div class="portrait">
+        <div class="portrait-inner"><span>Self, in progress — oil on canvas</span></div>
+      </div>
+      <p class="portrait-caption">Study in warm shadow</p>
     </div>
   </section>
 
   <section id="about">
     <div class="section-head">
-      <span class="eyebrow">About Me</span>
-      <h2>關於我</h2>
+      <span class="eyebrow">Biography</span>
+      <h2>Early Life &amp; Discipline</h2>
     </div>
-    <div class="about-grid">
-      <div class="about-visual"><span>李</span></div>
-      <div class="about-text">
-        <p>我是<strong>李家豪</strong>，目前是一名<strong>牙醫系學生</strong>，正在學習如何用專業與細心，為患者帶來健康與自信的笑容。</p>
-        <p>在課業之外，我熱愛<strong>油畫</strong>與<strong>素描</strong>，喜歡透過畫筆捕捉光線、質感與情緒，這也讓我在精細的臨床操作上多了一份對細節的敏銳與耐心。</p>
-        <p>對我而言，牙醫與繪畫看似不同，卻同樣需要穩定的手、專注的心，以及對美感的堅持。</p>
-        <div class="fact-row">
-          <div class="fact"><div class="num">牙醫系</div><div class="label">主修領域</div></div>
-          <div class="fact"><div class="num">油畫</div><div class="label">熱愛創作</div></div>
-          <div class="fact"><div class="num">素描</div><div class="label">日常練習</div></div>
-        </div>
+    <div class="about-body">
+      <div>
+        <p class="lede">Chia-Hao Lee is currently a dental student, training toward a career built on precision, care, and an eye for aesthetic detail. The clinical world demands exactly what he has long practiced at the easel: a steady hand, patient observation, and respect for structure.</p>
+        <p>Alongside his coursework, Lee is a devoted painter and draughtsman, working primarily in oil and graphite. His visual education has been shaped by the portraiture of John Singer Sargent — the fluid, confident brushwork, the restrained yet luminous palette, and the way a single passage of light can carry the weight of a whole composition.</p>
+        <p>He sees dentistry and painting not as opposites but as parallel disciplines: both are exercises in bringing order, proportion, and quiet dignity to the human face.</p>
+      </div>
+      <div>
+        <ul class="fact-list">
+          <li><span class="k">Field of Study</span><span class="v">Dentistry</span></li>
+          <li><span class="k">Primary Medium</span><span class="v">Oil on Canvas</span></li>
+          <li><span class="k">Secondary Practice</span><span class="v">Sketching &amp; Charcoal</span></li>
+          <li><span class="k">Chief Influence</span><span class="v">John Singer Sargent</span></li>
+          <li><span class="k">Guiding Interest</span><span class="v">Light &amp; Character</span></li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section id="interests" class="interests">
+  <section id="callings">
     <div class="section-head">
-      <span class="eyebrow">Interests</span>
-      <h2>我的興趣</h2>
+      <span class="eyebrow">Two Callings</span>
+      <h2>Precision &amp; Perception</h2>
     </div>
-    <div class="cards">
-      <div class="card">
-        <div class="icon">🎨</div>
-        <h3>油畫</h3>
-        <p>喜歡用厚重的顏料層層堆疊，享受色彩交融的過程，捕捉光影與情感的溫度。</p>
+    <div class="callings">
+      <div class="calling-card">
+        <div class="num">I.</div>
+        <h3>Dentistry</h3>
+        <p>Training in the exacting, hands-on discipline of dental science — a practice where accuracy of movement and clarity of judgment shape another person's confidence and comfort.</p>
       </div>
-      <div class="card">
-        <div class="icon">✏️</div>
-        <h3>素描</h3>
-        <p>用鉛筆勾勒線條與明暗，練習觀察力與耐心，是最貼近生活的創作方式。</p>
+      <div class="calling-card">
+        <div class="num">II.</div>
+        <h3>Painting</h3>
+        <p>An ongoing study in oil and graphite, pursuing the painterly economy of Sargent: assured brushwork, a controlled dark palette, and light used sparingly, where it matters most.</p>
       </div>
-    </div>
-    <div class="palette-strip">
-      <div class="dot" style="background:#D9764A;"></div>
-      <div class="dot" style="background:#E8AB55;"></div>
-      <div class="dot" style="background:#C1512F;"></div>
-      <div class="dot" style="background:#7A5340;"></div>
-      <div class="dot" style="background:#F3E4D0;"></div>
     </div>
   </section>
 
-  <div class="quote">
-    <p>用嚴謹守護笑容，用畫筆記錄生活。</p>
-  </div>
+  <section id="practice" class="practice">
+    <div class="section-head">
+      <span class="eyebrow">Artistic Practice</span>
+      <h2>On Oil, Light &amp; Sargent</h2>
+    </div>
+    <div class="medium-grid">
+      <div>Oil</div>
+      <div>Charcoal</div>
+      <div>Graphite</div>
+      <div>Ink Wash</div>
+    </div>
+    <p class="practice-note">The studies favor a <strong>restrained, tonal palette</strong> — deep umbers, muted flesh tones, and passages of ivory light — in the spirit of Sargent's alla prima portraits, where confidence of gesture matters more than density of detail.</p>
+    <div class="swatches">
+      <div style="background:#0D0A08;"></div>
+      <div style="background:#3A2A1E;"></div>
+      <div style="background:#6E4A34;"></div>
+      <div style="background:#B98A63;"></div>
+      <div style="background:#7C2E2A;"></div>
+      <div style="background:#ECE1CC;"></div>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <p class="q">A steady hand in the clinic, a patient eye at the easel.</p>
+    <p class="attrib">Chia-Hao Lee</p>
+  </section>
 
   <footer>
-    &copy; 2026 李家豪 — 牙醫系學生 · 油畫與素描愛好者
+    &copy; 2026 Chia-Hao Lee — Dental Student &amp; Painter, in the tradition of Sargent
   </footer>
 
 </body>
