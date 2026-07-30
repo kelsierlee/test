@@ -9,16 +9,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #FAFAF4;
-    --bg-deep: #F1EDE2;
+    --bg: #FFFFFF;
+    --bg-deep: #F6F5F0;
     --panel: #FFFFFF;
-    --panel-soft: #F6F3E9;
+    --panel-soft: #F3F1EA;
     --ivory: #1A1A1A;
-    --ivory-dim: #58554C;
+    --ivory-dim: #5C5A54;
     --gold: #9C7A2E;
     --gold-soft: #7E6326;
     --crimson: #7C2E2A;
-    --line: rgba(26,26,26,0.12);
+    --line: rgba(26,26,26,0.08);
+    --radius: 18px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -35,9 +36,8 @@
   h1, h2, h3, .display {
     font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
     color: var(--ivory);
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-    font-weight: 800;
+    letter-spacing: 0;
+    font-weight: 700;
   }
 
   .eyebrow {
@@ -61,7 +61,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.6rem 6%;
-    background: linear-gradient(to bottom, rgba(250,250,244,0.92), transparent 150%);
+    background: linear-gradient(to bottom, rgba(255,255,255,0.92), transparent 150%);
     z-index: 100;
   }
 
@@ -118,8 +118,8 @@
 
   .hero h1 {
     font-size: clamp(2.8rem, 5.5vw, 4.6rem);
-    font-weight: 900;
-    line-height: 1.02;
+    font-weight: 800;
+    line-height: 1.08;
     letter-spacing: 0;
     margin-bottom: 1.4rem;
   }
@@ -139,12 +139,11 @@
 
   .hero .role {
     font-family: "Archivo", sans-serif;
-    text-transform: uppercase;
-    font-size: 1.05rem;
-    letter-spacing: 0.06em;
+    font-size: 1.1rem;
+    letter-spacing: 0;
     color: var(--gold);
     margin-bottom: 1.6rem;
-    font-weight: 700;
+    font-weight: 600;
   }
 
   .hero .desc {
@@ -157,11 +156,11 @@
 
   .btn {
     display: inline-block;
-    font-size: 0.78rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
     text-decoration: none;
     padding: 0.95rem 2.1rem;
+    border-radius: 999px;
     transition: all 0.3s ease;
   }
 
@@ -183,6 +182,7 @@
     position: relative;
     aspect-ratio: 3/4;
     border: 1px solid var(--line);
+    border-radius: var(--radius);
     padding: 14px;
     background: var(--panel);
     box-shadow: 0 20px 45px rgba(26,26,26,0.08);
@@ -193,6 +193,7 @@
     height: 100%;
     position: relative;
     overflow: hidden;
+    border-radius: calc(var(--radius) - 8px);
     background: var(--panel-soft);
   }
 
@@ -272,7 +273,7 @@
   }
 
   .fact-list .k { color: var(--ivory-dim); letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.75rem; }
-  .fact-list .v { font-family: "Archivo", sans-serif; color: var(--ivory); font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; font-size: 0.85rem; }
+  .fact-list .v { font-family: "Archivo", sans-serif; color: var(--ivory); font-weight: 600; font-size: 0.95rem; }
 
   /* ---------- Two Callings ---------- */
   .callings {
@@ -284,8 +285,10 @@
   .calling-card {
     background: var(--panel);
     border: 1px solid var(--line);
+    border-radius: var(--radius);
     padding: 2.6rem 2.2rem;
     position: relative;
+    overflow: hidden;
     box-shadow: 0 4px 24px rgba(26,26,26,0.05);
   }
 
@@ -293,7 +296,7 @@
     content: "";
     position: absolute;
     top: 0; left: 0;
-    width: 100%; height: 3px;
+    width: 100%; height: 4px;
     background: linear-gradient(90deg, var(--gold), transparent);
   }
 
@@ -320,6 +323,8 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
   }
 
   .medium-grid div {
@@ -327,11 +332,10 @@
     text-align: center;
     border-right: 1px solid var(--line);
     font-family: "Archivo", sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-weight: 600;
     color: var(--ivory-dim);
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
   }
 
   .medium-grid div:last-child { border-right: none; }
@@ -344,7 +348,7 @@
 
   .practice-note strong { color: var(--gold); font-weight: 500; }
 
-  .swatches { display: flex; gap: 0; margin-top: 2.5rem; height: 46px; border: 1px solid var(--line); }
+  .swatches { display: flex; gap: 0; margin-top: 2.5rem; height: 46px; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
   .swatches div { flex: 1; }
 
   /* ---------- Portfolio ---------- */
@@ -357,7 +361,7 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--gold);
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 1.2rem;
   }
 
@@ -371,6 +375,7 @@
     position: relative;
     overflow: hidden;
     border: 1px solid var(--line);
+    border-radius: var(--radius);
     aspect-ratio: 3/4;
     background: var(--panel);
     box-shadow: 0 4px 24px rgba(26,26,26,0.05);
@@ -393,7 +398,7 @@
     position: absolute;
     left: 0; right: 0; bottom: 0;
     padding: 0.9rem 1rem;
-    background: linear-gradient(to top, rgba(250,250,244,0.95), transparent);
+    background: linear-gradient(to top, rgba(255,255,255,0.95), transparent);
     font-size: 0.78rem;
     letter-spacing: 0.02em;
     color: var(--ivory);
@@ -408,7 +413,7 @@
 
   .quote-section p.q {
     font-family: "Archivo", sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1.5rem;
     color: var(--ivory);
     line-height: 1.5;
@@ -503,18 +508,19 @@
     </div>
     <div class="about-body">
       <div>
-        <p class="lede">Jia-Hao Lee, known online as Kelsier Lee, is currently on the path to becoming an aesthetic dentist, training toward a practice built on precision, care, and an eye for facial beauty. The clinical world demands exactly what he has long practiced at the easel: a steady hand, patient observation, and respect for structure.</p>
-        <p>Alongside his coursework, Lee is a devoted painter and draughtsman, working primarily in oil and graphite. His visual education has been shaped by the portraiture of John Singer Sargent — the fluid, confident brushwork, the restrained yet luminous palette, and the way a single passage of light can carry the weight of a whole composition.</p>
-        <p>He sees aesthetic dentistry and painting not as opposites but as parallel disciplines: both are, in the end, quiet acts of transformation — reshaping a smile, or revealing a likeness — each bringing order, proportion, and dignity to the human face. It is a pursuit he carries with him like a recurring emblem: the butterfly, always mid-change.</p>
+        <p class="lede">Jia-Hao Lee, known online as Kelsier Lee, is a dental medicine student at Taipei Medical University with a research focus on periodontology — working toward publication, and a specialty license and master's degree in the United States. He currently serves as President of the TMU Dental Society, having previously directed international affairs for the Taiwan Dental Students' Association (TDSA).</p>
+        <p>Alongside his coursework, Lee is a devoted painter, draughtsman, and photographer, working primarily in oil, graphite, and film. His visual education has been shaped by the portraiture of John Singer Sargent — the fluid, confident brushwork and the way a single passage of light can carry the weight of a whole composition.</p>
+        <p>He approaches both callings — clinical and artistic — with the same meticulous, even-tempered empathy: precision and care, in service of transformation. Reshaping a smile, or revealing a likeness, is the same quiet pursuit.</p>
       </div>
       <div>
         <ul class="fact-list">
           <li><span class="k">Also Known As</span><span class="v">Kelsier Lee</span></li>
-          <li><span class="k">Field of Study</span><span class="v">Aesthetic Dentistry</span></li>
+          <li><span class="k">Field of Study</span><span class="v">Dentistry — Periodontology Focus</span></li>
+          <li><span class="k">Leadership</span><span class="v">President, TMU Dental Society</span></li>
+          <li><span class="k">International Affairs</span><span class="v">Former Director, TDSA</span></li>
           <li><span class="k">Primary Medium</span><span class="v">Oil on Canvas</span></li>
-          <li><span class="k">Secondary Practice</span><span class="v">Sketching &amp; Charcoal</span></li>
+          <li><span class="k">Also Practices</span><span class="v">Sketching, Charcoal &amp; Photography</span></li>
           <li><span class="k">Chief Influence</span><span class="v">John Singer Sargent</span></li>
-          <li><span class="k">Guiding Interest</span><span class="v">Light &amp; Character</span></li>
           <li><span class="k">Personal Emblem</span><span class="v">The Butterfly</span></li>
         </ul>
       </div>
@@ -567,7 +573,7 @@
       <div>Oil</div>
       <div>Charcoal</div>
       <div>Graphite</div>
-      <div>Ink Wash</div>
+      <div>Photography</div>
     </div>
     <p class="practice-note">The studies favor a <strong>restrained, tonal palette</strong> — deep umbers, muted flesh tones, and passages of ivory light — in the spirit of Sargent's alla prima portraits, where confidence of gesture matters more than density of detail.</p>
     <div class="swatches">
