@@ -444,6 +444,23 @@
     margin-bottom: 2rem;
   }
 
+  .guestbook-summary {
+    margin-bottom: 2.5rem;
+  }
+
+  .guestbook-summary button {
+    background: none;
+  }
+
+  .guestbook-summary-text {
+    margin-top: 1rem;
+    color: var(--ivory);
+    font-family: "Archivo", sans-serif;
+    font-weight: 500;
+    font-size: 1.05rem;
+    max-width: 640px;
+  }
+
   .guestbook-list {
     display: grid;
     gap: 1.2rem;
@@ -741,6 +758,11 @@
     </form>
     <p class="guestbook-status" id="guestbook-status"></p>
 
+    <div class="guestbook-summary">
+      <button type="button" class="btn btn-ghost" id="guestbook-summarize">AI Summary</button>
+      <p class="guestbook-summary-text" id="guestbook-summary-text"></p>
+    </div>
+
     <div class="guestbook-list" id="guestbook-list"></div>
   </section>
 
@@ -768,6 +790,8 @@
     const msgInput = document.getElementById('guestbook-message');
     const status = document.getElementById('guestbook-status');
     const list = document.getElementById('guestbook-list');
+    const summarizeBtn = document.getElementById('guestbook-summarize');
+    const summaryText = document.getElementById('guestbook-summary-text');
 
     function formatDate(iso) {
       try {
@@ -840,6 +864,26 @@
           loadEntries();
         })
         .catch(() => { status.textContent = 'Something went wrong — please try again.'; });
+    });
+
+    summarizeBtn.addEventListener('click', function () {
+      const originalLabel = summarizeBtn.textContent;
+      summarizeBtn.disabled = true;
+      summarizeBtn.textContent = 'Summarizing…';
+      summaryText.textContent = '';
+      fetch('/api/summary', { method: 'POST' })
+        .then((r) => r.json().then((data) => ({ ok: r.ok, data })))
+        .then(({ ok, data }) => {
+          if (!ok) throw new Error(data && data.error);
+          summaryText.textContent = data.summary;
+        })
+        .catch(() => {
+          summaryText.textContent = 'Could not generate a summary right now.';
+        })
+        .finally(() => {
+          summarizeBtn.disabled = false;
+          summarizeBtn.textContent = originalLabel;
+        });
     });
 
     loadEntries();
