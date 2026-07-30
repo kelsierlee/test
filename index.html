@@ -77,12 +77,6 @@
     gap: 0.6rem;
   }
 
-  nav .logo svg {
-    width: 20px;
-    height: 12px;
-    color: var(--gold);
-  }
-
   nav ul {
     display: flex;
     list-style: none;
@@ -215,7 +209,7 @@
     opacity: 0.85;
   }
 
-  /* ---------- Divider (butterfly motif) ---------- */
+  /* ---------- Divider ---------- */
   .divider {
     display: flex;
     align-items: center;
@@ -233,8 +227,8 @@
 
   .divider .motif {
     flex-shrink: 0;
-    width: 34px;
-    height: 20px;
+    width: 8px;
+    height: 8px;
     color: var(--gold);
     opacity: 0.85;
   }
@@ -538,13 +532,7 @@
 <body>
 
   <nav>
-    <div class="logo">
-      <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-        <path d="M50 30 C35 5, 5 10, 8 28 C10 40, 30 38, 50 30 C70 38, 90 40, 92 28 C95 10, 65 5, 50 30 Z" fill="none" stroke="currentColor" stroke-width="3"/>
-        <line x1="50" y1="16" x2="50" y2="44" stroke="currentColor" stroke-width="3"/>
-      </svg>
-      Kelsier Lee
-    </div>
+    <div class="logo">Kelsier Lee</div>
     <ul>
       <li><a href="#about">Biography</a></li>
       <li><a href="#callings">Two Callings</a></li>
@@ -559,8 +547,8 @@
       <span class="eyebrow">Portrait &amp; Introduction</span>
       <h1>Jia-Hao<br>Lee</h1>
       <p class="alias">also known as <em>Kelsier Lee</em></p>
-      <p class="role">Aspiring Aesthetic Dentist &amp; Oil Painter</p>
-      <p class="desc">By day, on the journey toward becoming an aesthetic dentist, training the steady hand and disciplined eye that reshaping a smile demands. By evening, a painter — drawn to the luminous brushwork and dignified realism of John Singer Sargent, working in oil and charcoal to study light, form, and character. Two crafts, one quiet pursuit: transformation.</p>
+      <p class="role">Aspiring Aesthetic Dentist &amp; Visual Artist</p>
+      <p class="desc">Dental medicine student at Taipei Medical University, training in aesthetic dentistry with a research focus on periodontology. Alongside his clinical work, Lee paints, draws, and photographs — bringing the same precision and eye for form to both the clinic and the canvas.</p>
       <div class="btn-row">
         <a href="#about" class="btn btn-solid">Biography</a>
         <a href="#practice" class="btn btn-ghost">The Work</a>
@@ -576,9 +564,8 @@
 
   <div class="divider">
     <span class="dline"></span>
-    <svg class="motif" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-      <path d="M50 30 C35 5, 5 10, 8 28 C10 40, 30 38, 50 30 C70 38, 90 40, 92 28 C95 10, 65 5, 50 30 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
-      <line x1="50" y1="16" x2="50" y2="44" stroke="currentColor" stroke-width="2.5"/>
+    <svg class="motif" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="5" cy="5" r="3" fill="currentColor"/>
     </svg>
     <span class="dline"></span>
   </div>
@@ -591,8 +578,8 @@
     <div class="about-body">
       <div>
         <p class="lede">Jia-Hao Lee, known online as Kelsier Lee, is a dental medicine student at Taipei Medical University with a research focus on periodontology — working toward publication, and a specialty license and master's degree in the United States. He currently serves as President of the TMU Dental Society, having previously directed international affairs for the Taiwan Dental Students' Association (TDSA).</p>
-        <p>Alongside his coursework, Lee is a devoted painter, draughtsman, and photographer, working primarily in oil, graphite, and film. His visual education has been shaped by the portraiture of John Singer Sargent — the fluid, confident brushwork and the way a single passage of light can carry the weight of a whole composition.</p>
-        <p>He approaches both callings — clinical and artistic — with the same meticulous, even-tempered empathy: precision and care, in service of transformation. Reshaping a smile, or revealing a likeness, is the same quiet pursuit.</p>
+        <p>Alongside his coursework, Lee paints, draws, and photographs — a visual practice built on composition and form, and carried into the precision his clinical training demands.</p>
+        <p>He brings the same standard to both: a steady hand, a calm temperament, and close attention to what a face — or a smile — is trying to say.</p>
       </div>
       <div>
         <ul class="fact-list">
@@ -602,8 +589,6 @@
           <li><span class="k">International Affairs</span><span class="v">Former Director, TDSA</span></li>
           <li><span class="k">Primary Medium</span><span class="v">Oil on Canvas</span></li>
           <li><span class="k">Also Practices</span><span class="v">Sketching, Charcoal &amp; Photography</span></li>
-          <li><span class="k">Chief Influence</span><span class="v">John Singer Sargent</span></li>
-          <li><span class="k">Personal Emblem</span><span class="v">The Butterfly</span></li>
         </ul>
       </div>
     </div>
@@ -611,9 +596,8 @@
 
   <div class="divider">
     <span class="dline"></span>
-    <svg class="motif" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-      <path d="M50 30 C35 5, 5 10, 8 28 C10 40, 30 38, 50 30 C70 38, 90 40, 92 28 C95 10, 65 5, 50 30 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
-      <line x1="50" y1="16" x2="50" y2="44" stroke="currentColor" stroke-width="2.5"/>
+    <svg class="motif" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="5" cy="5" r="3" fill="currentColor"/>
     </svg>
     <span class="dline"></span>
   </div>
@@ -627,21 +611,20 @@
       <div class="calling-card">
         <div class="num">I.</div>
         <h3>Aesthetic Dentistry</h3>
-        <p>Training in the exacting, hands-on discipline of aesthetic dentistry — a practice where accuracy of movement and an eye for facial harmony reshape another person's smile, confidence, and comfort.</p>
+        <p>Hands-on training in a discipline where precision of movement and an eye for facial harmony shape another person's confidence.</p>
       </div>
       <div class="calling-card">
         <div class="num">II.</div>
-        <h3>Painting</h3>
-        <p>An ongoing study in oil and graphite, pursuing the painterly economy of Sargent: assured brushwork, a controlled dark palette, and light used sparingly, where it matters most.</p>
+        <h3>Visual Art</h3>
+        <p>An ongoing practice across oil, graphite, and photography — assured technique, a controlled palette, and an instinct for when restraint says more than detail.</p>
       </div>
     </div>
   </section>
 
   <div class="divider">
     <span class="dline"></span>
-    <svg class="motif" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-      <path d="M50 30 C35 5, 5 10, 8 28 C10 40, 30 38, 50 30 C70 38, 90 40, 92 28 C95 10, 65 5, 50 30 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
-      <line x1="50" y1="16" x2="50" y2="44" stroke="currentColor" stroke-width="2.5"/>
+    <svg class="motif" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="5" cy="5" r="3" fill="currentColor"/>
     </svg>
     <span class="dline"></span>
   </div>
@@ -670,9 +653,8 @@
 
   <div class="divider">
     <span class="dline"></span>
-    <svg class="motif" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-      <path d="M50 30 C35 5, 5 10, 8 28 C10 40, 30 38, 50 30 C70 38, 90 40, 92 28 C95 10, 65 5, 50 30 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
-      <line x1="50" y1="16" x2="50" y2="44" stroke="currentColor" stroke-width="2.5"/>
+    <svg class="motif" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="5" cy="5" r="3" fill="currentColor"/>
     </svg>
     <span class="dline"></span>
   </div>
@@ -740,9 +722,8 @@
 
   <div class="divider">
     <span class="dline"></span>
-    <svg class="motif" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-      <path d="M50 30 C35 5, 5 10, 8 28 C10 40, 30 38, 50 30 C70 38, 90 40, 92 28 C95 10, 65 5, 50 30 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
-      <line x1="50" y1="16" x2="50" y2="44" stroke="currentColor" stroke-width="2.5"/>
+    <svg class="motif" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="5" cy="5" r="3" fill="currentColor"/>
     </svg>
     <span class="dline"></span>
   </div>
@@ -765,20 +746,19 @@
 
   <div class="divider">
     <span class="dline"></span>
-    <svg class="motif" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
-      <path d="M50 30 C35 5, 5 10, 8 28 C10 40, 30 38, 50 30 C70 38, 90 40, 92 28 C95 10, 65 5, 50 30 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
-      <line x1="50" y1="16" x2="50" y2="44" stroke="currentColor" stroke-width="2.5"/>
+    <svg class="motif" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="5" cy="5" r="3" fill="currentColor"/>
     </svg>
     <span class="dline"></span>
   </div>
 
   <section class="quote-section">
-    <p class="q">To reshape a smile, and to reveal a likeness — both, quietly, are acts of transformation.</p>
+    <p class="q">A steady hand shapes a smile. A trained eye shapes a likeness. Same discipline, different canvas.</p>
     <p class="attrib">Jia-Hao Lee</p>
   </section>
 
   <footer>
-    &copy; 2026 Jia-Hao Lee (Kelsier Lee) — Aesthetic Dentistry Student &amp; Painter, in the tradition of Sargent
+    &copy; 2026 Jia-Hao Lee (Kelsier Lee) — Aesthetic Dentistry Student &amp; Visual Artist
   </footer>
 
   <script>
