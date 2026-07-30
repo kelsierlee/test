@@ -6,7 +6,7 @@
 <title>Jia-Hao Lee</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,600&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #15100D;
@@ -25,22 +25,25 @@
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: "EB Garamond", Georgia, serif;
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
     background: var(--bg);
     color: var(--ivory-dim);
-    line-height: 1.8;
-    font-size: 1.08rem;
+    line-height: 1.7;
+    font-size: 1.05rem;
   }
 
   h1, h2, h3, .display {
-    font-family: "Playfair Display", Georgia, serif;
+    font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
     color: var(--ivory);
-    letter-spacing: 0.01em;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-weight: 800;
   }
 
   .eyebrow {
     display: block;
-    font-family: "EB Garamond", serif;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
     font-size: 0.78rem;
     letter-spacing: 0.28em;
     text-transform: uppercase;
@@ -63,11 +66,12 @@
   }
 
   nav .logo {
-    font-family: "Playfair Display", serif;
-    font-weight: 700;
-    font-size: 1.15rem;
+    font-family: "Archivo", sans-serif;
+    font-weight: 800;
+    font-size: 1.05rem;
     color: var(--ivory);
-    letter-spacing: 0.06em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     display: flex;
     align-items: center;
     gap: 0.6rem;
@@ -115,29 +119,32 @@
   .hero h1 {
     font-size: clamp(2.8rem, 5.5vw, 4.6rem);
     font-weight: 900;
-    line-height: 1.05;
+    line-height: 1.02;
+    letter-spacing: 0;
     margin-bottom: 1.4rem;
   }
 
   .hero .alias {
     font-size: 0.85rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.03em;
     color: var(--ivory-dim);
     margin-bottom: 1.4rem;
   }
 
   .hero .alias em {
-    font-style: italic;
+    font-style: normal;
+    font-weight: 600;
     color: var(--gold);
   }
 
   .hero .role {
-    font-family: "Playfair Display", serif;
-    font-style: italic;
-    font-size: 1.35rem;
+    font-family: "Archivo", sans-serif;
+    text-transform: uppercase;
+    font-size: 1.05rem;
+    letter-spacing: 0.06em;
     color: var(--gold);
     margin-bottom: 1.6rem;
-    font-weight: 500;
+    font-weight: 700;
   }
 
   .hero .desc {
@@ -261,16 +268,6 @@
 
   .about-body p { margin-bottom: 1.2rem; color: var(--ivory-dim); }
 
-  .about-body .lede::first-letter {
-    font-family: "Playfair Display", serif;
-    font-size: 3.4rem;
-    float: left;
-    line-height: 0.8;
-    padding: 0.05em 0.12em 0 0;
-    color: var(--gold);
-    font-weight: 700;
-  }
-
   .fact-list {
     list-style: none;
     margin-top: 1.5rem;
@@ -286,7 +283,7 @@
   }
 
   .fact-list .k { color: var(--ivory-dim); letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.75rem; }
-  .fact-list .v { font-family: "Playfair Display", serif; color: var(--ivory); font-style: italic; }
+  .fact-list .v { font-family: "Archivo", sans-serif; color: var(--ivory); font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em; font-size: 0.85rem; }
 
   /* ---------- Two Callings ---------- */
   .callings {
@@ -311,10 +308,11 @@
   }
 
   .calling-card .num {
-    font-family: "Playfair Display", serif;
-    font-style: italic;
+    font-family: "Archivo", sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.04em;
     color: var(--gold-soft);
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
   }
 
@@ -338,11 +336,12 @@
     padding: 2rem 1rem;
     text-align: center;
     border-right: 1px solid var(--line);
-    font-family: "Playfair Display", serif;
-    font-style: italic;
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
     color: var(--ivory-dim);
-    font-size: 1rem;
-    letter-spacing: 0.03em;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
   }
 
   .medium-grid div:last-child { border-right: none; }
@@ -363,13 +362,12 @@
   .gallery-group:last-child { margin-bottom: 0; }
 
   .gallery-label {
-    font-family: "EB Garamond", serif;
-    font-style: italic;
-    font-size: 1rem;
-    letter-spacing: 0.1em;
+    font-family: "Archivo", sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--gold);
-    font-weight: 500;
+    font-weight: 700;
     margin-bottom: 1.2rem;
   }
 
@@ -419,11 +417,11 @@
   }
 
   .quote-section p.q {
-    font-family: "Playfair Display", serif;
-    font-style: italic;
-    font-size: 1.7rem;
+    font-family: "Archivo", sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
     color: var(--ivory);
-    line-height: 1.55;
+    line-height: 1.5;
   }
 
   .quote-section .q::before { content: "\201C"; color: var(--gold); }
