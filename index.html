@@ -68,6 +68,15 @@
     font-size: 1.15rem;
     color: var(--ivory);
     letter-spacing: 0.06em;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  nav .logo svg {
+    width: 20px;
+    height: 12px;
+    color: var(--gold);
   }
 
   nav ul {
@@ -200,12 +209,35 @@
     opacity: 0.7;
   }
 
-  /* ---------- Section shared ---------- */
-  section {
-    padding: 7rem 6%;
+  /* ---------- Divider (butterfly motif) ---------- */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
     max-width: 1100px;
     margin: 0 auto;
-    border-top: 1px solid var(--line);
+    padding: 0 6%;
+  }
+
+  .divider .dline {
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .divider .motif {
+    flex-shrink: 0;
+    width: 34px;
+    height: 20px;
+    color: var(--gold);
+    opacity: 0.85;
+  }
+
+  /* ---------- Section shared ---------- */
+  section {
+    padding: 5rem 6% 7rem;
+    max-width: 1100px;
+    margin: 0 auto;
   }
 
   .section-head { margin-bottom: 3rem; max-width: 640px; }
@@ -351,7 +383,6 @@
     text-transform: uppercase;
     color: var(--ivory-dim);
     opacity: 0.6;
-    border-top: 1px solid var(--line);
   }
 
   /* ---------- Responsive ---------- */
@@ -369,7 +400,13 @@
 <body>
 
   <nav>
-    <div class="logo">C. H. Lee</div>
+    <div class="logo">
+      <svg viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 30 C35 5, 5 10, 8 28 C10 40, 30 38, 50 30 C70 38, 90 40, 92 28 C95 10, 65 5, 50 30 Z" fill="none" stroke="currentColor" stroke-width="3"/>
+        <line x1="50" y1="16" x2="50" y2="44" stroke="currentColor" stroke-width="3"/>
+      </svg>
+      C. H. Lee
+    </div>
     <ul>
       <li><a href="#about">Biography</a></li>
       <li><a href="#callings">Two Callings</a></li>
@@ -377,12 +414,12 @@
     </ul>
   </nav>
 
-  <section class="hero" style="border-top:none;">
+  <section class="hero">
     <div class="hero-text">
       <span class="eyebrow">Portrait &amp; Introduction</span>
       <h1>Chia-Hao<br>Lee</h1>
-      <p class="role">Dental Student &amp; Oil Painter</p>
-      <p class="desc">By day, a student of dental science, training the steady hand and disciplined eye that clinical work demands. By evening, a painter — drawn to the luminous brushwork and dignified realism of John Singer Sargent, working in oil and charcoal to study light, form, and character.</p>
+      <p class="role">Aspiring Aesthetic Dentist &amp; Oil Painter</p>
+      <p class="desc">By day, on the journey toward becoming an aesthetic dentist, training the steady hand and disciplined eye that reshaping a smile demands. By evening, a painter — drawn to the luminous brushwork and dignified realism of John Singer Sargent, working in oil and charcoal to study light, form, and character. Two crafts, one quiet pursuit: transformation.</p>
       <div class="btn-row">
         <a href="#about" class="btn btn-solid">Biography</a>
         <a href="#practice" class="btn btn-ghost">The Work</a>
@@ -396,6 +433,15 @@
     </div>
   </section>
 
+  <div class="divider">
+    <span class="dline"></span>
+    <svg class="motif" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 30 C35 5, 5 10, 8 28 C10 40, 30 38, 50 30 C70 38, 90 40, 92 28 C95 10, 65 5, 50 30 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+      <line x1="50" y1="16" x2="50" y2="44" stroke="currentColor" stroke-width="2.5"/>
+    </svg>
+    <span class="dline"></span>
+  </div>
+
   <section id="about">
     <div class="section-head">
       <span class="eyebrow">Biography</span>
@@ -403,21 +449,31 @@
     </div>
     <div class="about-body">
       <div>
-        <p class="lede">Chia-Hao Lee is currently a dental student, training toward a career built on precision, care, and an eye for aesthetic detail. The clinical world demands exactly what he has long practiced at the easel: a steady hand, patient observation, and respect for structure.</p>
+        <p class="lede">Chia-Hao Lee is currently on the path to becoming an aesthetic dentist, training toward a practice built on precision, care, and an eye for facial beauty. The clinical world demands exactly what he has long practiced at the easel: a steady hand, patient observation, and respect for structure.</p>
         <p>Alongside his coursework, Lee is a devoted painter and draughtsman, working primarily in oil and graphite. His visual education has been shaped by the portraiture of John Singer Sargent — the fluid, confident brushwork, the restrained yet luminous palette, and the way a single passage of light can carry the weight of a whole composition.</p>
-        <p>He sees dentistry and painting not as opposites but as parallel disciplines: both are exercises in bringing order, proportion, and quiet dignity to the human face.</p>
+        <p>He sees aesthetic dentistry and painting not as opposites but as parallel disciplines: both are, in the end, quiet acts of transformation — reshaping a smile, or revealing a likeness — each bringing order, proportion, and dignity to the human face. It is a pursuit he carries with him like a recurring emblem: the butterfly, always mid-change.</p>
       </div>
       <div>
         <ul class="fact-list">
-          <li><span class="k">Field of Study</span><span class="v">Dentistry</span></li>
+          <li><span class="k">Field of Study</span><span class="v">Aesthetic Dentistry</span></li>
           <li><span class="k">Primary Medium</span><span class="v">Oil on Canvas</span></li>
           <li><span class="k">Secondary Practice</span><span class="v">Sketching &amp; Charcoal</span></li>
           <li><span class="k">Chief Influence</span><span class="v">John Singer Sargent</span></li>
           <li><span class="k">Guiding Interest</span><span class="v">Light &amp; Character</span></li>
+          <li><span class="k">Personal Emblem</span><span class="v">The Butterfly</span></li>
         </ul>
       </div>
     </div>
   </section>
+
+  <div class="divider">
+    <span class="dline"></span>
+    <svg class="motif" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 30 C35 5, 5 10, 8 28 C10 40, 30 38, 50 30 C70 38, 90 40, 92 28 C95 10, 65 5, 50 30 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+      <line x1="50" y1="16" x2="50" y2="44" stroke="currentColor" stroke-width="2.5"/>
+    </svg>
+    <span class="dline"></span>
+  </div>
 
   <section id="callings">
     <div class="section-head">
@@ -427,8 +483,8 @@
     <div class="callings">
       <div class="calling-card">
         <div class="num">I.</div>
-        <h3>Dentistry</h3>
-        <p>Training in the exacting, hands-on discipline of dental science — a practice where accuracy of movement and clarity of judgment shape another person's confidence and comfort.</p>
+        <h3>Aesthetic Dentistry</h3>
+        <p>Training in the exacting, hands-on discipline of aesthetic dentistry — a practice where accuracy of movement and an eye for facial harmony reshape another person's smile, confidence, and comfort.</p>
       </div>
       <div class="calling-card">
         <div class="num">II.</div>
@@ -437,6 +493,15 @@
       </div>
     </div>
   </section>
+
+  <div class="divider">
+    <span class="dline"></span>
+    <svg class="motif" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 30 C35 5, 5 10, 8 28 C10 40, 30 38, 50 30 C70 38, 90 40, 92 28 C95 10, 65 5, 50 30 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+      <line x1="50" y1="16" x2="50" y2="44" stroke="currentColor" stroke-width="2.5"/>
+    </svg>
+    <span class="dline"></span>
+  </div>
 
   <section id="practice" class="practice">
     <div class="section-head">
@@ -460,13 +525,22 @@
     </div>
   </section>
 
+  <div class="divider">
+    <span class="dline"></span>
+    <svg class="motif" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 30 C35 5, 5 10, 8 28 C10 40, 30 38, 50 30 C70 38, 90 40, 92 28 C95 10, 65 5, 50 30 Z" fill="none" stroke="currentColor" stroke-width="2.5"/>
+      <line x1="50" y1="16" x2="50" y2="44" stroke="currentColor" stroke-width="2.5"/>
+    </svg>
+    <span class="dline"></span>
+  </div>
+
   <section class="quote-section">
-    <p class="q">A steady hand in the clinic, a patient eye at the easel.</p>
+    <p class="q">To reshape a smile, and to reveal a likeness — both, quietly, are acts of transformation.</p>
     <p class="attrib">Chia-Hao Lee</p>
   </section>
 
   <footer>
-    &copy; 2026 Chia-Hao Lee — Dental Student &amp; Painter, in the tradition of Sargent
+    &copy; 2026 Chia-Hao Lee — Aesthetic Dentistry Student &amp; Painter, in the tradition of Sargent
   </footer>
 
 </body>
